@@ -1,6 +1,7 @@
 import Container from "../ui/Container";
 import Button from "../ui/Button";
 import Reveal from "../ui/Reveal";
+import ImageFrame from "../ui/ImageFrame";
 
 export default function Hero() {
   return (
@@ -43,7 +44,7 @@ export default function Hero() {
           </div>
 
           <Reveal delay={0.08} y={14}>
-            <div className="aspect-4/5 w-full rounded-3xl border border-black/10 bg-black/5" />
+            <ImageFrame ratio="portrait" label="Hero visual" />
           </Reveal>
         </div>
       </Container>

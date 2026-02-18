@@ -2,6 +2,7 @@ import Container from "../ui/Container";
 import Button from "../ui/Button";
 import Reveal from "../ui/Reveal";
 import { formatPrice, getFeaturedProduct } from "../../data/products";
+import ImageFrame from "../ui/ImageFrame";
 
 export default function FeaturedProduct() {
   const product = getFeaturedProduct();
@@ -49,8 +50,9 @@ export default function FeaturedProduct() {
           </div>
 
           <Reveal delay={0.1} y={14} className="order-1 lg:order-2">
-            <div className="aspect-4/3 rounded-3xl border border-black/10 bg-black/5" />
+            <ImageFrame ratio="landscape" label="Featured product" />
           </Reveal>
+
         </div>
       </Container>
     </section>
