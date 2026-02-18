@@ -1,11 +1,5 @@
 import Container from "../ui/Container";
-
-const categories = [
-  { title: "Engagement Rings" },
-  { title: "Wedding Bands" },
-  { title: "Necklaces" },
-  { title: "Bracelets" },
-];
+import { categories } from "../../data/categories";
 
 export default function CategoryGrid() {
   return (
@@ -22,16 +16,17 @@ export default function CategoryGrid() {
 
         <div className="mt-8 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
           {categories.map((c) => (
-            <div
-              key={c.title}
+            <a
+              key={c.id}
+              href={c.href}
               className="group relative overflow-hidden rounded-3xl border border-black/10 bg-white"
             >
               <div className="aspect-5/4 bg-black/5 transition group-hover:scale-[1.02]" />
               <div className="p-5">
                 <p className="text-sm font-semibold">{c.title}</p>
-                <p className="mt-1 text-xs text-black/60">Explore</p>
+                <p className="mt-1 text-xs text-black/60">{c.subtitle}</p>
               </div>
-            </div>
+            </a>
           ))}
         </div>
       </Container>
