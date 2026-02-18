@@ -1,3 +1,4 @@
+import AnnouncementBar from "../components/sections/AnnouncementBar";
 import Navbar from "../components/sections/Navbar";
 import Hero from "../components/sections/Hero";
 import CategoryGrid from "../components/sections/CategoryGrid";
@@ -9,6 +10,7 @@ import Footer from "../components/sections/Footer";
 export default function Home() {
   return (
     <div className="min-h-screen bg-white text-black">
+      <AnnouncementBar />
       <Navbar />
       <Hero />
       <CategoryGrid />
