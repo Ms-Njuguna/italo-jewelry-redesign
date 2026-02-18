@@ -2,6 +2,7 @@ import Container from "../ui/Container";
 import Button from "../ui/Button";
 import Reveal from "../ui/Reveal";
 import { formatPrice, getBestSellers } from "../../data/products";
+import ImageFrame from "../ui/ImageFrame";
 
 export default function BestSellers() {
   const products = getBestSellers(8);
@@ -25,7 +26,9 @@ export default function BestSellers() {
           {products.map((p, idx) => (
             <Reveal key={p.id} delay={0.03 * idx} y={12}>
               <div className="overflow-hidden rounded-3xl border border-black/10 bg-white">
-                <div className="aspect-square bg-black/5" />
+                <div className="p-4">
+                  <ImageFrame ratio="square" rounded="2xl" subtle label={p.tag} />
+                </div>
                 <div className="p-5">
                   <div className="flex items-start justify-between gap-3">
                     <p className="text-sm font-semibold">{p.name}</p>

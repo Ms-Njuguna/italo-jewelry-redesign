@@ -1,6 +1,7 @@
 import Container from "../ui/Container";
 import Reveal from "../ui/Reveal";
 import { categories } from "../../data/categories";
+import ImageFrame from "../ui/ImageFrame";
 
 export default function CategoryGrid() {
   return (
@@ -24,7 +25,9 @@ export default function CategoryGrid() {
                 href={c.href}
                 className="group block overflow-hidden rounded-3xl border border-black/10 bg-white"
               >
-                <div className="aspect-5/4 bg-black/5 transition group-hover:scale-[1.02]" />
+                <div className="p-4">
+                  <ImageFrame ratio="landscape" rounded="2xl" subtle label={c.title} />
+                </div>
                 <div className="p-5">
                   <p className="text-sm font-semibold">{c.title}</p>
                   <p className="mt-1 text-xs text-black/60">{c.subtitle}</p>
