@@ -1,3 +1,4 @@
+import Navbar from "../components/sections/Navbar";
 import Hero from "../components/sections/Hero";
 import CategoryGrid from "../components/sections/CategoryGrid";
 import FeaturedProduct from "../components/sections/FeaturedProduct";
@@ -8,6 +9,7 @@ import Footer from "../components/sections/Footer";
 export default function Home() {
   return (
     <div className="min-h-screen bg-white text-black">
+      <Navbar />
       <Hero />
       <CategoryGrid />
       <FeaturedProduct />
