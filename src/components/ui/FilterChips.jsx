@@ -13,7 +13,7 @@ export default function FilterChips({ value, onChange, options }) {
             className={cn(
               "rounded-full border px-4 py-2 text-xs font-medium transition",
               active
-                ? "border-black bg-black text-white"
+                ? "border-[rgb(var(--accent))] bg-[rgb(var(--accent)/0.12)] text-[rgb(var(--accent-strong))]"
                 : "border-black/10 bg-white text-black/70 hover:bg-black/5"
             )}
           >

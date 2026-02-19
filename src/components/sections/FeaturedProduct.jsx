@@ -13,7 +13,7 @@ export default function FeaturedProduct() {
         <div className="grid gap-10 lg:grid-cols-2 lg:items-center">
           <div className="order-2 lg:order-1">
             <Reveal>
-              <p className="text-xs font-semibold tracking-[0.2em] text-black/60">
+              <p className="text-xs font-semibold tracking-[0.2em] text-[rgb(var(--accent-strong))]">
                 FEATURED
               </p>
             </Reveal>

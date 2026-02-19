@@ -8,6 +8,7 @@
   --accent: 202 178 115;      /* champagne gold */
   --accent-strong: 163 128 67;/* deeper gold */
   --sale: 188 34 34;          /* restrained red (not neon) */
+  --secondary: 120 113 108;
 }
 
 html, body {
