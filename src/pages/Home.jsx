@@ -9,11 +9,13 @@ import TrustBar from "../components/sections/TrustBar";
 import Footer from "../components/sections/Footer";
 import QuickViewModal from "../components/ui/QuickViewModal";
 import { categories } from "../data/categories";
+import ProductDetailsPreview from "../components/sections/ProductDetailsPreview";
 import {
   products,
   filterProductsByCategory,
   filterProductsByQuery,
   sortProducts,
+  getFeaturedProduct,
 } from "../data/products";
 
 export default function Home() {
@@ -43,6 +45,8 @@ export default function Home() {
     { value: "price_desc", label: "Price: high to low" },
   ];
 
+  const pdpProduct = useMemo(() => getFeaturedProduct(), []);
+
   return (
     <div className="min-h-screen bg-white text-black">
       <AnnouncementBar />
@@ -51,7 +55,7 @@ export default function Home() {
       <Hero />
       <CategoryGrid />
       <FeaturedProduct />
-
+      <ProductDetailsPreview product={pdpProduct} />
       <BestSellers
         query={query}
         products={filtered}
