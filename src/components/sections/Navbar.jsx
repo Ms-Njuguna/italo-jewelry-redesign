@@ -1,6 +1,7 @@
 import { useEffect, useRef, useState } from "react";
 import Container from "../ui/Container";
 import Button from "../ui/Button";
+import { Link } from "react-router-dom";
 
 export default function Navbar({ query, onQueryChange }) {
   const [shopOpen, setShopOpen] = useState(false);
@@ -28,10 +29,10 @@ export default function Navbar({ query, onQueryChange }) {
       <Container className="py-4">
         <div className="flex items-center justify-between gap-4">
           {/* Logo */}
-          <a href="#top" className="flex items-center gap-2">
+          <Link to="/" className="flex items-center gap-2">
             <span className="text-[rgb(var(--accent-strong))] text-sm font-semibold tracking-wide">ITALO</span>
             <span className="text-xs text-black/50">Redesign</span>
-          </a>
+          </Link>
 
           {/* Nav */}
           <nav className="hidden items-center gap-6 md:flex">
