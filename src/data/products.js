@@ -112,3 +112,17 @@ export function getBestSellers(limit = 8) {
     .sort((a, b) => b.rating * b.reviews - a.rating * a.reviews)
     .slice(0, limit);
 }
+
+export function normalizeQuery(q) {
+  return String(q || "").trim().toLowerCase();
+}
+
+export function filterProductsByQuery(list, q) {
+  const query = normalizeQuery(q);
+  if (!query) return list;
+
+  return list.filter((p) => {
+    const hay = `${p.name} ${p.tag} ${p.category}`.toLowerCase();
+    return hay.includes(query);
+  });
+}
