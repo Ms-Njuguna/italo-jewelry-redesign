@@ -29,7 +29,7 @@ export default function Navbar({ query, onQueryChange }) {
         <div className="flex items-center justify-between gap-4">
           {/* Logo */}
           <a href="#top" className="flex items-center gap-2">
-            <span className="text-sm font-semibold tracking-wide">ITALO</span>
+            <span className="text-[rgb(var(--accent-strong))] text-sm font-semibold tracking-wide">ITALO</span>
             <span className="text-xs text-black/50">Redesign</span>
           </a>
 

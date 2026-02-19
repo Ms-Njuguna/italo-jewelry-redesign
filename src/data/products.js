@@ -126,3 +126,56 @@ export function filterProductsByQuery(list, q) {
     return hay.includes(query);
   });
 }
+
+export function filterProductsByCategory(list, categoryId) {
+  if (!categoryId || categoryId === "all") return list;
+  return list.filter((p) => p.category === categoryId);
+}
+
+export function sortProducts(list, sortKey, query = "") {
+  const arr = [...list];
+
+  switch (sortKey) {
+    case "rating":
+      return arr.sort((a, b) => (b.rating ?? 0) - (a.rating ?? 0));
+    case "price_asc":
+      return arr.sort((a, b) => (a.price ?? 0) - (b.price ?? 0));
+    case "price_desc":
+      return arr.sort((a, b) => (b.price ?? 0) - (a.price ?? 0));
+    case "best_match":
+    default: {
+      // Simple "best match": if query exists, boost items where name/tag contains query
+      const q = normalizeQuery(query);
+      if (!q) {
+        // fallback: popularity-ish
+        return arr.sort((a, b) => (b.rating * b.reviews) - (a.rating * a.reviews));
+      }
+
+      function score(p) {
+        const name = String(p.name || "").toLowerCase();
+        const tag = String(p.tag || "").toLowerCase();
+        const cat = String(p.category || "").toLowerCase();
+
+        let s = 0;
+        if (name.includes(q)) s += 6;
+        if (tag.includes(q)) s += 3;
+        if (cat.includes(q)) s += 2;
+
+        // Secondary signal: popularity
+        s += (p.rating ?? 0) * 0.5 + Math.log10((p.reviews ?? 1) + 1);
+        return s;
+      }
+
+      return arr.sort((a, b) => score(b) - score(a));
+    }
+  }
+}
+
+export function isOnSale(p) {
+  return Number(p.compareAt) > Number(p.price);
+}
+
+export function percentOff(p) {
+  if (!isOnSale(p)) return 0;
+  return Math.round(((p.compareAt - p.price) / p.compareAt) * 100);
+}

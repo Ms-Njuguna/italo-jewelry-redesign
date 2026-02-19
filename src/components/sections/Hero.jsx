@@ -2,6 +2,7 @@ import Container from "../ui/Container";
 import Button from "../ui/Button";
 import Reveal from "../ui/Reveal";
 import ImageFrame from "../ui/ImageFrame";
+import heroImg from "../../assets/hero/hero.jpg";
 
 export default function Hero() {
   return (
@@ -44,7 +45,12 @@ export default function Hero() {
           </div>
 
           <Reveal delay={0.08} y={14}>
-            <ImageFrame ratio="portrait" label="Hero visual" />
+            <ImageFrame
+              ratio="portrait"
+              src={heroImg}
+              alt="Jewelry hero visual"
+              label="New collection"
+            />
           </Reveal>
         </div>
       </Container>
