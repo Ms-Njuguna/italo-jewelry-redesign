@@ -170,3 +170,12 @@ export function sortProducts(list, sortKey, query = "") {
     }
   }
 }
+
+export function isOnSale(p) {
+  return Number(p.compareAt) > Number(p.price);
+}
+
+export function percentOff(p) {
+  if (!isOnSale(p)) return 0;
+  return Math.round(((p.compareAt - p.price) / p.compareAt) * 100);
+}
