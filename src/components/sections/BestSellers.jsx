@@ -28,7 +28,14 @@ export default function BestSellers() {
             <Reveal key={p.id} delay={0.03 * idx} y={12}>
               <Card className="overflow-hidden">
                 <div className="p-4">
-                  <ImageFrame ratio="square" rounded="2xl" subtle label={p.tag} />
+                  <ImageFrame
+                    ratio="square"
+                    rounded="2xl"
+                    subtle
+                    label={p.tag}
+                    src={p.image}
+                    alt={p.name}
+                  />
                 </div>
                 <div className="px-5 pb-5">
                   <div className="flex items-start justify-between gap-3">

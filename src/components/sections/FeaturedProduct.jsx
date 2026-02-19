@@ -50,7 +50,12 @@ export default function FeaturedProduct() {
           </div>
 
           <Reveal delay={0.1} y={14} className="order-1 lg:order-2">
-            <ImageFrame ratio="landscape" label="Featured product" />
+            <ImageFrame
+              ratio="landscape"
+              label="Featured product"
+              src={product.image}
+              alt={product.name}
+            />
           </Reveal>
 
         </div>

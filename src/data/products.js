@@ -1,3 +1,12 @@
+import auroraImg from "../assets/products/aurora.jpg";
+import lunaImg from "../assets/products/luna.jpg";
+import haloImg from "../assets/products/halo.jpg";
+import classicBandImg from "../assets/products/classic-band.jpg";
+import paveBandImg from "../assets/products/pave-band.jpg";
+import celesteImg from "../assets/products/celeste.jpg";
+import tennisImg from "../assets/products/tennis.jpg";
+import chainImg from "../assets/products/chain.jpg";
+
 export const products = [
   {
     id: "aurora-ring",
@@ -8,6 +17,7 @@ export const products = [
     category: "engagement",
     rating: 4.8,
     reviews: 312,
+    image: auroraImg,
   },
   {
     id: "luna-solitaire",
@@ -18,6 +28,7 @@ export const products = [
     category: "engagement",
     rating: 4.7,
     reviews: 221,
+    image: lunaImg,
   },
   {
     id: "halo-bloom",
@@ -28,6 +39,7 @@ export const products = [
     category: "engagement",
     rating: 4.6,
     reviews: 188,
+    image: haloImg,
   },
   {
     id: "classic-band",
@@ -38,6 +50,7 @@ export const products = [
     category: "wedding",
     rating: 4.5,
     reviews: 144,
+    image: classicBandImg,
   },
   {
     id: "pave-band",
@@ -48,6 +61,7 @@ export const products = [
     category: "wedding",
     rating: 4.6,
     reviews: 97,
+    image: paveBandImg,
   },
   {
     id: "celeste-pendant",
@@ -58,6 +72,7 @@ export const products = [
     category: "necklaces",
     rating: 4.4,
     reviews: 61,
+    image: celesteImg,
   },
   {
     id: "tennis-bracelet",
@@ -68,6 +83,7 @@ export const products = [
     category: "bracelets",
     rating: 4.7,
     reviews: 203,
+    image: tennisImg,
   },
   {
     id: "minimal-chain",
@@ -78,6 +94,7 @@ export const products = [
     category: "necklaces",
     rating: 4.3,
     reviews: 54,
+    image: chainImg,
   },
 ];
 
