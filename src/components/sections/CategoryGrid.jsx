@@ -2,6 +2,7 @@ import Container from "../ui/Container";
 import Reveal from "../ui/Reveal";
 import { categories } from "../../data/categories";
 import ImageFrame from "../ui/ImageFrame";
+import Card from "../ui/Card";
 
 export default function CategoryGrid() {
   return (
@@ -21,17 +22,16 @@ export default function CategoryGrid() {
         <div className="mt-8 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
           {categories.map((c, idx) => (
             <Reveal key={c.id} delay={0.04 * idx} y={12}>
-              <a
-                href={c.href}
-                className="group block overflow-hidden rounded-3xl border border-black/10 bg-white"
-              >
-                <div className="p-4">
-                  <ImageFrame ratio="landscape" rounded="2xl" subtle label={c.title} />
-                </div>
-                <div className="p-5">
-                  <p className="text-sm font-semibold">{c.title}</p>
-                  <p className="mt-1 text-xs text-black/60">{c.subtitle}</p>
-                </div>
+              <a href={c.href} className="block">
+                <Card className="group overflow-hidden">
+                  <div className="p-4">
+                    <ImageFrame ratio="landscape" rounded="2xl" subtle label={c.title} />
+                  </div>
+                  <div className="px-5 pb-5">
+                    <p className="text-sm font-semibold">{c.title}</p>
+                    <p className="mt-1 text-xs text-black/60">{c.subtitle}</p>
+                  </div>
+                </Card>
               </a>
             </Reveal>
           ))}
