@@ -4,6 +4,10 @@
   color-scheme: light;
   --font-body: "Inter", system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
   --font-display: "Fraunces", ui-serif, Georgia, serif;
+
+  --accent: 202 178 115;      /* champagne gold */
+  --accent-strong: 163 128 67;/* deeper gold */
+  --sale: 188 34 34;          /* restrained red (not neon) */
 }
 
 html, body {
