@@ -51,7 +51,6 @@ export default function Home() {
       <Hero />
       <CategoryGrid />
       <FeaturedProduct />
-
       <BestSellers
         query={query}
         products={filtered}

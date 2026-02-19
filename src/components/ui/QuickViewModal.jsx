@@ -4,6 +4,7 @@ import { AnimatePresence, motion } from "framer-motion";
 import Button from "./Button";
 import ImageFrame from "./ImageFrame";
 import { formatPrice } from "../../data/products";
+import { useNavigate } from "react-router-dom";
 
 export default function QuickViewModal({ product, onClose }) {
   useEffect(() => {
@@ -22,6 +23,8 @@ export default function QuickViewModal({ product, onClose }) {
       document.body.style.overflow = original;
     };
   }, [product]);
+
+  const navigate = useNavigate();
 
   return createPortal(
     <AnimatePresence>
@@ -99,7 +102,15 @@ export default function QuickViewModal({ product, onClose }) {
 
                 <div className="mt-6 flex flex-wrap gap-3">
                   <Button variant="primary">Add to cart</Button>
-                  <Button variant="secondary">View full details</Button>
+                  <Button
+                    variant="secondary"
+                    onClick={() => {
+                      onClose?.();
+                      navigate(`/products/${product.id}`);
+                    }}
+                  >
+                    View full details
+                  </Button>
                 </div>
               </div>
             </div>
