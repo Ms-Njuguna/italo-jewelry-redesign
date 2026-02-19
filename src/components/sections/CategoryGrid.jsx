@@ -25,7 +25,14 @@ export default function CategoryGrid() {
               <a href={c.href} className="block">
                 <Card className="group overflow-hidden">
                   <div className="p-4">
-                    <ImageFrame ratio="landscape" rounded="2xl" subtle label={c.title} />
+                    <ImageFrame
+                      ratio="landscape"
+                      rounded="2xl"
+                      subtle
+                      label={c.title}
+                      src={c.image}
+                      alt={c.title}
+                    />
                   </div>
                   <div className="px-5 pb-5">
                     <p className="text-sm font-semibold">{c.title}</p>
