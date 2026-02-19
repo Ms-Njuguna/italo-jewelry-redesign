@@ -2,6 +2,8 @@
 
 :root {
   color-scheme: light;
+  --font-body: "Inter", system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+  --font-display: "Fraunces", ui-serif, Georgia, serif;
 }
 
 html, body {
@@ -10,4 +12,10 @@ html, body {
 
 body {
   margin: 0;
+  font-family: var(--font-body);
+}
+
+h1, h2, h3, .font-display {
+  font-family: var(--font-display);
+  letter-spacing: -0.01em;
 }
