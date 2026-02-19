@@ -5,7 +5,7 @@ import ImageFrame from "../ui/ImageFrame";
 
 export default function Hero() {
   return (
-    <section className="border-b border-black/10">
+    <section id="top" className="border-b border-black/10">
       <Container className="py-16 sm:py-20">
         <div className="grid items-center gap-10 lg:grid-cols-2">
           <div>

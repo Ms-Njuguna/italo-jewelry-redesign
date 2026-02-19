@@ -9,7 +9,7 @@ export default function BestSellers() {
   const products = getBestSellers(8);
 
   return (
-    <section>
+    <section id="bestsellers">
       <Container className="py-16">
         <Reveal>
           <div className="flex items-end justify-between gap-6">

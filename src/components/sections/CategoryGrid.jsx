@@ -6,7 +6,7 @@ import Card from "../ui/Card";
 
 export default function CategoryGrid() {
   return (
-    <section>
+    <section id="categories">
       <Container className="py-14">
         <Reveal>
           <div className="flex items-end justify-between gap-6">
