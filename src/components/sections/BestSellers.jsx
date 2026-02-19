@@ -6,7 +6,7 @@ import ImageFrame from "../ui/ImageFrame";
 import FilterChips from "../ui/FilterChips";
 import SortSelect from "../ui/SortSelect";
 import Highlight from "../ui/Highlight";
-import { formatPrice } from "../../data/products";
+import { formatPrice, isOnSale, percentOff } from "../../data/products";
 
 export default function BestSellers({
   products,
@@ -111,11 +111,17 @@ export default function BestSellers({
 
                     <div className="mt-2 flex items-center gap-2">
                       <p className="text-sm text-black/80">{formatPrice(p.price)}</p>
-                      <p className="text-xs text-black/40 line-through">
-                        {formatPrice(p.compareAt)}
-                      </p>
+                      {isOnSale(p) ? (
+                        <>
+                          <p className="text-xs text-black/40 line-through">
+                            {formatPrice(p.compareAt)}
+                          </p>
+                          <span className="rounded-full border border-[rgb(var(--sale)/0.25)] bg-[rgb(var(--sale)/0.06)] px-2 py-1 text-[10px] font-medium text-[rgb(var(--sale))]">
+                            {percentOff(p)}% off
+                          </span>
+                        </>
+                      ) : null}
                     </div>
-
                     <p className="mt-2 text-xs text-black/60">
                       {p.rating} ★ ({p.reviews})
                     </p>
