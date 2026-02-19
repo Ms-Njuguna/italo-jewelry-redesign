@@ -6,6 +6,8 @@ export default function ImageFrame({
   rounded = "3xl", // 2xl | 3xl
   label,
   subtle = false,
+  src,
+  alt = "",
 }) {
   const ratios = {
     square: "aspect-square",
@@ -41,6 +43,17 @@ export default function ImageFrame({
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_80%_30%,rgba(0,0,0,0.04),transparent_50%)]" />
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_30%_90%,rgba(0,0,0,0.05),transparent_55%)]" />
       </div>
+
+      {src ? (
+        <img
+          src={src}
+          alt={alt}
+          className={cn(
+            "absolute inset-0 h-full w-full object-cover",
+            "transition duration-700 group-hover:scale-[1.03]"
+          )}
+        />
+      ) : null}
 
       {/* Shine hover */}
       <div className="absolute -inset-x-24 -inset-y-10 rotate-12 opacity-0 transition duration-700 group-hover:opacity-100">

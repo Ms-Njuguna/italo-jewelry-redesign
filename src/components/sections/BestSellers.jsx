@@ -3,6 +3,7 @@ import Button from "../ui/Button";
 import Reveal from "../ui/Reveal";
 import { formatPrice, getBestSellers } from "../../data/products";
 import ImageFrame from "../ui/ImageFrame";
+import Card from "../ui/Card";
 
 export default function BestSellers() {
   const products = getBestSellers(8);
@@ -25,11 +26,18 @@ export default function BestSellers() {
         <div className="mt-8 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
           {products.map((p, idx) => (
             <Reveal key={p.id} delay={0.03 * idx} y={12}>
-              <div className="overflow-hidden rounded-3xl border border-black/10 bg-white">
+              <Card className="overflow-hidden">
                 <div className="p-4">
-                  <ImageFrame ratio="square" rounded="2xl" subtle label={p.tag} />
+                  <ImageFrame
+                    ratio="square"
+                    rounded="2xl"
+                    subtle
+                    label={p.tag}
+                    src={p.image}
+                    alt={p.name}
+                  />
                 </div>
-                <div className="p-5">
+                <div className="px-5 pb-5">
                   <div className="flex items-start justify-between gap-3">
                     <p className="text-sm font-semibold">{p.name}</p>
                     <span className="shrink-0 rounded-full border border-black/10 px-2 py-1 text-[10px] text-black/70">
@@ -48,7 +56,7 @@ export default function BestSellers() {
                     {p.rating} ★ ({p.reviews})
                   </p>
                 </div>
-              </div>
+              </Card>
             </Reveal>
           ))}
         </div>

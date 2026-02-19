@@ -10,13 +10,13 @@ export default function Hero() {
         <div className="grid items-center gap-10 lg:grid-cols-2">
           <div>
             <Reveal>
-              <p className="text-xs font-semibold tracking-[0.2em] text-black/60">
+              <p className="text-xs font-semibold tracking-[0.28em] text-black/60">
                 ITALO REDESIGN CONCEPT
               </p>
             </Reveal>
 
             <Reveal delay={0.05}>
-              <h1 className="mt-4 text-4xl font-semibold leading-tight sm:text-5xl">
+              <h1 className="mt-4 text-4xl font-semibold leading-[1.05] sm:text-5xl">
                 Jewelry that feels timeless — not templated.
               </h1>
             </Reveal>
