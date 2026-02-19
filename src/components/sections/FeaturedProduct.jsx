@@ -8,7 +8,7 @@ export default function FeaturedProduct() {
   const product = getFeaturedProduct();
 
   return (
-    <section className="border-y border-black/10">
+    <section id="featured" className="border-y border-black/10">
       <Container className="py-16">
         <div className="grid gap-10 lg:grid-cols-2 lg:items-center">
           <div className="order-2 lg:order-1">

@@ -10,7 +10,7 @@ const items = [
 
 export default function TrustBar() {
   return (
-    <section className="border-t border-black/10">
+    <section id="trust" className="border-t border-black/10">
       <Container className="py-12">
         <Reveal>
           <div className="flex items-end justify-between gap-6">
